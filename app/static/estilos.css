@@ -34,9 +34,13 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            width: 10%;
+            
             border-radius: 25px;
             margin-right: auto;
+        }
+        #mycanvas{
+            transform: scale(0.55);
+            
         }
         button{
             background-color: #3b3b3b;
@@ -45,7 +49,7 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            width: 10%;
+            
             
             border-radius: 25px;
             margin-right: auto;
@@ -126,12 +130,23 @@
             grid-area: myfooter;
         }
 
+        #ab{
+            
+            max-width: 50%;
+            position: sticky;
+            margin: auto; 
+            ;
+
+        }
+        
         div{
             display: block;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: 31vw;;
             max-width: 45%;
         }
+
+        
 
         
             body{
@@ -160,6 +175,7 @@
                 grid-template-areas: "myheader myheader myheader myheader myheader"
                                      "mymain mymain mymain mymain mynav"
                                      "mymain mymain mymain mymain mynav"
+                                     "mymain mymain mymain mymain mynav"
                                      "myfooter myfooter myfooter myfooter myfooter"
                                     ;
                 max-width:100vw;
@@ -172,5 +188,22 @@
             nav{
                 margin-left: auto;
             }
-
+            div{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 45%;
+            }
+            #ab{
+                margin-top: 30px;
+                max-width: 100%;
+                position: sticky;
+                overflow-x: hidden;
+                margin-left: auto; 
+    
+            }
+            #mycanvas{
+                transform: scale(1);
+                
+            }
         }

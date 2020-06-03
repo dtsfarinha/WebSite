@@ -1,24 +1,35 @@
 ##trabalho feito por Duarte e Sergio
 
-def action(inp, rep, move):
-    global tapehead
-    print(tape[tapehead])
-    if tape[tapehead] == inp:
-        tape[tapehead] = rep
-        if move == 'S':
-            return True
-        if move == 'L':
-            tapehead -= 1
-        elif move == 'R':
-            tapehead += 1
-        return True
-    return False
 
-def turingMachine():
-    string = input("Enter String: ")
+def main(string):
+
+    tapehead = 1
+
+    if string == "1" or string == "0":
+        return ("Insert more than one caracter")
+
+    def action(inp, rep, move):
+        nonlocal tapehead
+        print(tape[tapehead])
+        if tape[tapehead] == inp:
+            tape[tapehead] = rep
+            if move == 'S':
+                return True
+            if move == 'L':
+                tapehead -= 1
+            elif move == 'R':
+                tapehead += 1
+            return True
+        return False
+    
+
+
+
+    #string = input("Enter String: ")
     length = len(string) + (len(string) * 2)
-    tape = ['d'] * length
+    tape = ['\u0394'] * length
     i = 1
+
     tapehead = 1
     for s in string:
         tape[i] = s
@@ -27,7 +38,7 @@ def turingMachine():
 
     state = 1
 
-    R, L, x, d, S = 'R', 'L', 'x', 'd', 'S'
+    R, L, x, d, S = 'R', 'L', 'x', '\u0394', 'S'
 
     oldtapehead = -1
     accept = False
@@ -104,10 +115,14 @@ def turingMachine():
             if action(x, d, L):
                 state = 11
             elif action(d, d, S):
-                accept = True
+                return tape
 
 
     if accept:
         print("String accepted on state = ", state)
     else:
-        print("String not accepted on state = ", state)
+        return("String not accepted on state = ", state)
+    
+    
+
+

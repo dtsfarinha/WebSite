@@ -44,8 +44,10 @@ def gol():
 @app.route('/turing', methods=["POST","GET"])
 def turing():
     if request.method == "POST":
-        seq = request.form["sequencia"]
-        AutFinito.automato(seq)
+        se = request.form["se"]
+        
+        tape = tur.main(se)
+        flash(tape)
         return render_template("turing.html" ) 
     return render_template("turing.html")
 
