@@ -39,7 +39,10 @@
             margin-right: auto;
         }
         #mycanvas{
-            transform: scale(0.55);
+            transform: scale(0.50);
+            display: block;
+            margin-right: 50vmin;
+            
             
         }
         button{
@@ -55,7 +58,7 @@
             margin-right: auto;
         }
         textarea{
-            visibility: hidden;
+            display: none;
         }
         .submit{
             border-radius: 5px;
@@ -115,6 +118,7 @@
             overflow-y: visible;
             border-radius: 25px;
             box-sizing: border-box;
+            
         }
 
         img.rounded {
@@ -132,22 +136,18 @@
 
         #ab{
             
-            max-width: 50%;
+            max-width: 25%;
             position: sticky;
-            margin: auto; 
-            ;
+            margin: auto;
+            list-style-type: none; 
 
         }
-        
-        div{
+        #smile{
             display: block;
             margin-left: auto;
-            margin-right: 31vw;;
+            margin-right: auto;
             max-width: 45%;
         }
-
-        
-
         
             body{
                 background-image: url("blog2.jpg") ;
@@ -204,6 +204,9 @@
             }
             #mycanvas{
                 transform: scale(1);
+                display: block;
+                margin-left: 25vmax;
                 
+                max-width: 50%;
             }
         }

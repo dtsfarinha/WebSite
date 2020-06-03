@@ -45,7 +45,6 @@ def gol():
 def turing():
     if request.method == "POST":
         se = request.form["se"]
-        
         tape = tur.main(se)
         flash(tape)
         return render_template("turing.html" ) 
