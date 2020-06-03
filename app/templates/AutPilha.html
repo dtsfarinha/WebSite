@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+<h1>Automato Pilha</h1><hr/>
+<h3>Insira uma sequência de binária que pertença a 0<sup>n</sup>1<sup>n</sup></h3>
+<form  action="/AutPilha" method = "post">
+    <label for="sequen">sequencia:</label><br>
+    <input type="text" name="sequen" autocomplete="off" ><br>
+    <p></p><br>
+    <input id="button" class="submit" type="submit" value="submit">
+</form>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+         <p class="flash">{{ message }}</p> 
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<p></p><br>
+
+{% endblock %}

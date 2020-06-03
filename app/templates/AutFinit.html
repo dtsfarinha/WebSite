@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+
+<h1>Automato Finito.</h1> <hr/>
+<h3>Insira uma sequência de 'a' e 'b' com pelo menos um 'ab' ou um 'bba'</h3>
+<form  action="/AutFinit" method = "post">
+     <label for="sequencia">sequencia:</label><br>
+     <input type="text" name="sequencia" autocomplete="off"><br>
+     <p></p><br>
+     <input id="button" class="submit" type="submit" value="submit">
+   </form>
+   {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <p class="flash">{{ message }}</p> 
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <p></p><br>
+{% endblock %}

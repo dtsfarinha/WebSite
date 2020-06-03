@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>about page</title>
+    
+    <link href="{{ url_for('static', filename = 'estilos2.css') }}" rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+    
+    <header>
+        <img src="{{ url_for('static', filename = 'blog3.jpg') }}" style=" margin-left: 5px; margin-top: 10px; margin-right: 10px; clear: both;"class = "rounded" >
+        <h1 class = "text">THE BLOg</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li> <a href="index">Back</a> </li>
+        </ul>          
+    </nav>
+
+    <main>
+        <h3>
+            <br>   O game of life é um autómato celular e tem o objetivo de reproduzir
+            através de regras simples o desenvolvimento de grupos de seres vivos.
+            A aplicação é "Turing Complete" o que significa que tem a capacidade de emular
+            uma maquina de turing, isto quer dizer que o sistema é capaz de reconhecer
+            e decidir a manipulação de data consoante as regras que lhe são dadas.<br>
+        
+
+            O funcionamento é constituido por um tabuleiro quadriculado em que as celulas 
+            podem estar ou vivas(1) ou mortas(0) e seguem as seguintes regras<br>
+            1)Cada celula com menos de duas vivas adjacentes morre por, subpopulação<br>
+            2)Uma celula com duas ou três vivas adjancentes continua viva <br>
+            3)Qualquer celula com mais de 3 adjancentes vivas morre por, sobrepopulção<br>
+            4)Uma celula morta com 3 vivas adjancentes torna se viva(reprodução)<br>
+            <br>
+            Para a criação desta aplicação haviam algumas escolhas em termos de tecnologias
+            viaveis como pygame ou bibliotecas com matplotlib mas decidimos escolher experimentar
+            algo novo e diferente utilizando "Skulpt" que permite correr python no browser
+            como JavaScript. Caso o tema do trabalho o permitisse teria sido muito mais 
+            eficiente faze-lo em JavaScript aproveitando tecnologias como o React para o 
+            front-end. Para desenhar os graficos usamos o Turtle(biblioteca grafica do python)
+            mas devido à passagem pelo Skulpt perdeu se algum performance.<br>
+        </h3>
+    </main>
+
+    <footer>
+        <p>Website feito em Flask &copy; 2020</p>
+    </footer>
+
+</body>
+
+</html>
