@@ -1,5 +1,6 @@
 ##trabalho feito por Duarte e Sergio
-
+from flask import flash
+import time
 
 def main(string):
 
@@ -39,11 +40,17 @@ def main(string):
     state = 1
 
     R, L, x, d, S = 'R', 'L', 'x', '\u0394', 'S'
-
+    #count = 1
+    #tapelist = []
     oldtapehead = -1
     accept = False
     while(oldtapehead != tapehead):
         oldtapehead = tapehead
+        #time.sleep(1)
+        
+        #tapelist[count] = tape
+        #count += 1
+        
         print(tape, "with tapehead at index", tapehead, "on state", state)
 
         if state == 1:
@@ -117,7 +124,7 @@ def main(string):
             elif action(d, d, S):
                 return tape
 
-
+    
     if accept:
         print("String accepted on state = ", state)
     else:

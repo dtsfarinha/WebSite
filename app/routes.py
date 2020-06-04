@@ -15,9 +15,9 @@ def regex():
         ma = AutFinito.mail(email)
         pa = AutFinito.password(password)
         if (ma == pa and pa == "1"):
-            flash("GOOD DATA :)")
+            flash("Dados aceites")
         else:
-            flash("Bad Data")
+            flash("Dados Incorretos")
         return render_template("regex.html" )
     return render_template("regex.html")
 

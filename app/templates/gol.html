@@ -133,6 +133,8 @@ def compute(col, row, matrix):
             state = matrix[i][j]
             if (i == 0 or i == col - 1 or j == 0 or j == row - 1):
                 nextMatrix[i][j] = state
+                if state == 1:
+                    fillSquare(i, j, pix)
                 continue
                 print("not bro\n--------------")
             
