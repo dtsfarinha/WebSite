@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+<h1>Algoritmos</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+         <p  class="flash">{{ message }}</p> 
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<hr/>
+<script>
+    function hideShow(clicked_id)
+    {
+        var x1 = document.getElementById("hid1");
+        var x2 = document.getElementById("hid2");
+        var x3 = document.getElementById("hid3");
+        var x4 = document.getElementById("hid4");
+
+        if(clicked_id == "b1"){
+            if(x1.style.display === "none")
+            {
+                x1.style.display = "block";
+                x2.style.display = "none";
+                x3.style.display = "none";
+                x4.style.display = "none";
+            }
+            else
+            {
+                x1.style.display = "none";
+                
+            }
+        }else if(clicked_id == "b2")
+        {
+                if(x2.style.display === "none")
+            {
+                x2.style.display = "block";
+                x1.style.display = "none";
+                x3.style.display = "none";
+                x4.style.display = "none";
+            }
+            else
+            {
+                x2.style.display = "none";
+                
+            }
+        }else if(clicked_id == "b3")
+        {
+                if(x3.style.display === "none")
+            {
+                x3.style.display = "block";
+                x1.style.display = "none";
+                x2.style.display = "none";
+                x4.style.display = "none";
+            }
+            else
+            {
+                x3.style.display = "none";
+                
+            }
+        }else if(clicked_id == "b4")
+        {
+                if(x4.style.display === "none")
+            {
+                x4.style.display = "block";
+                x1.style.display = "none";
+                x2.style.display = "none";
+                x3.style.display = "none";
+            }
+            else
+            {
+                x4.style.display = "none";
+                
+            }
+        }
+    }
+</script>
+
+<h2>Automato Finito.</h2> <hr/>
+<button id ="b1" onclick="hideShow(this.id)">Show/hide</button>
+
+<div id="hid1">
+<h3>Insira uma sequência de 'a' e 'b' com pelo menos um 'ab' ou um 'bba'</h3>
+<form  action="/AutFinit" method = "post">
+     <label for="sequencia">sequencia:</label><br>
+     <input type="text" name="sequencia" autocomplete="off"><br>
+     <p></p><br>
+     <input id="button" class="submit" type="submit" value="submit">
+   </form>
+   
+  <p></p><br>
+</div>
+  <h2>Automato Pilha</h2><hr/>
+<button id ="b2" onclick="hideShow(this.id)">Show/hide</button>
+
+<div id="hid2">
+<h3>Insira uma sequência de binária que pertença a 0<sup>n</sup>1<sup>n</sup></h3>
+<form  action="/AutPilha" method = "post">
+    <label for="sequen">sequencia:</label><br>
+    <input type="text" name="sequen" autocomplete="off" ><br>
+    <p></p><br>
+    <input id="button" class="submit" type="submit" value="submit">
+</form>
+
+
+<p></p><br>
+</div>
+
+<h2>Regex</h2><hr/>
+<button id ="b3" onclick="hideShow(this.id)">Show/hide</button>
+
+<div id="hid3">
+<h2>Login</h2><hr/>
+ <form action = "/regex" method = "post">
+      <label for = "name">Name</label><br>
+      <input type = "text" name = "name" autocomplete="off" /><br> 
+      <label for = "email">Email</label><br> 
+      <input type = "text" name = "email" required autocomplete="off"/><br> 
+      <label for = "password">Password</label><br>
+      <input type = "password" name = "password" required autocomplete="off"/><br>
+      <p></p><br>
+      <input id="button" class="submit" type = "submit" value="submit" /> 
+ </form> 
+
+ 
+<p></p><br>
+</div>
+
+<h2>Turing Machine</h2><hr/>
+<button id ="b4" onclick="hideShow(this.id)">Show/hide</button>
+
+<div id="hid4">
+<h3>Insira uma sequência binária para organizar</h3>
+<form  action="/turing" method = "post">
+    <label for="se">sequencia:</label><br>
+    <input type="text" name="se" autocomplete="off" ><br>
+    <p></p><br>
+    <input id="button" class="submit" type="submit" value="submit">
+</form>
+
+
+<p></p><br>
+</div>
+
+{% endblock %}

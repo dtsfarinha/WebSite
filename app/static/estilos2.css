@@ -85,10 +85,10 @@
             border: 5px outset whitesmoke;
         }
 
-        h1.text{
+        /* h1.text{
             border:1px dashed crimson;
             
-        }
+        } */
 
         nav{
             margin-top: 30px;
@@ -141,6 +141,7 @@
                                     'mymain'
                                     'myfooter'
                                     ;
+                                        
             }
         
             /* @media  all and (max-width:360px),
@@ -158,7 +159,8 @@
                                      "myfooter myfooter myfooter myfooter myfooter"
                                     ;
                 max-width:100vw;
-                height:100vh;                         
+                /* height:100vh; */
+                height:100%;                         
             }
             a:link, a:visited{
                 width: 10vw;

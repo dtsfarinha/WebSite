@@ -7,7 +7,7 @@
 
     <title>DO NOT CLICK HERE--></title>
     
-    <link href="{{ url_for('static', filename = 'estilos.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename = 'estilos3.css') }}" rel="stylesheet" type="text/css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -17,19 +17,22 @@
     
     <header>
         <img src="{{ url_for('static', filename = 'blog3.jpg') }}" style=" margin-left: 5px; margin-top: 10px; margin-right: 10px; clear: both;"class = "rounded" >
-        <h1 class = "text">THE BLOg</h1>
+        <h1>THE BLOg</h1>
+    
+        <nav>
+        
+            <a href="index">Index</a>
+            <a href="algo">Algoritmos</a>
+            <a href="gol">Game of life</a>
+               
+    </nav>
+
     </header>
 
-    <nav>
-        <ul>
-            <li> <a href="index">Index</a> </li>
-            <li><a href="regex">Regex</a></li>
-            <li><a href="AutFinit">Automato Finito</a></li>
-            <li><a href="AutPilha">Automato Pilha</a></li>
-            <li><a href="turing">Turing Machine</a></li>
-            <li><a href="gol">Game of life</a></li>
-        </ul>          
-    </nav>
+    
+
+    
+    
 
     <main>
         {% block content %}
@@ -37,7 +40,8 @@
     </main>
 
     <footer>
-        <p>Website feito em Flask &copy; 2020</p>
+        <p >Website feito em Flask &copy; 2020    <a   href="about">About</a>  </p>
+        
     </footer>
 
 </body>

@@ -7,7 +7,7 @@
 
     <title>about page</title>
     
-    <link href="{{ url_for('static', filename = 'estilos2.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename = 'estilos3.css') }}" rel="stylesheet" type="text/css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -18,40 +18,68 @@
     <header>
         <img src="{{ url_for('static', filename = 'blog3.jpg') }}" style=" margin-left: 5px; margin-top: 10px; margin-right: 10px; clear: both;"class = "rounded" >
         <h1 class = "text">THE BLOg</h1>
+   
+
+        <nav>
+            <a href="index">Index</a>
+            <a href="algo">Algoritmos</a>
+            <a href="gol">Game of life</a>
+            <!-- <a href="index">Back</a> -->
+                      
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li> <a href="index">Back</a> </li>
-        </ul>          
-    </nav>
 
     <main>
         <h3>
-            <br>   O game of life é um autómato celular e tem o objetivo de reproduzir
-            através de regras simples o desenvolvimento de grupos de seres vivos.
-            A aplicação é "Turing Complete" o que significa que tem a capacidade de emular
-            uma maquina de turing, isto quer dizer que o sistema é capaz de reconhecer
-            e decidir a manipulação de data consoante as regras que lhe são dadas.<br>
-        
-
-            O funcionamento é constituido por um tabuleiro quadriculado em que as celulas 
-            podem estar ou vivas(1) ou mortas(0) e seguem as seguintes regras<br>
-            1)Cada celula com menos de duas vivas adjacentes morre por, subpopulação<br>
-            2)Uma celula com duas ou três vivas adjancentes continua viva <br>
-            3)Qualquer celula com mais de 3 adjancentes vivas morre por, sobrepopulção<br>
-            4)Uma celula morta com 3 vivas adjancentes torna se viva(reprodução)<br>
-            <br>
-            Para a criação desta aplicação haviam algumas escolhas em termos de tecnologias
-            viaveis como pygame ou bibliotecas com matplotlib mas decidimos escolher experimentar
-            algo novo e diferente utilizando "Skulpt" que permite correr python no browser
-            como JavaScript. Caso o tema do trabalho o permitisse teria sido muito mais 
-            eficiente faze-lo em JavaScript aproveitando tecnologias como o React para o 
-            front-end. Para desenhar os graficos usamos o Turtle(biblioteca grafica do python)
-            mas devido à passagem pelo Skulpt perdeu se algum performance.<br>
-            O resto do Website foi feito com HTML, CSS, layout CSS Grid, 
-            website dinâmico e responsivo, Python, JavaScript (Skulpt), Flask, Git e Heroku.<br>
+            <br>   Este Website é um projeto de faculdade cujo o objetivo era aprender as bases
+            de front end e back end e assimilar conhecimentos em Webdesign. Para este projeto
+            usou-se a linguagem Html em conjunto com Css, Python e o framework Flask, um pouco
+            de JavaScript em especial menção o "sistema" Skulpt que é essencialmente um compilador
+            que permite correr Python num browser. Usados ainda no lançamento do site foram o git
+            e heroku (servidor). A formatação do site foi feita com um layout de Grid composto por
+             um header, um main e um footer e em versões anteriores um nav que agora se encontra 
+            implementado no header.	<br><br>
+               Na página algoritmos encontram-se 4 programas implementados no back end do site
+            cada um relacionado com a teoria dada na cadeira de teoria da computação.<br> O Autómato
+            Finito requisita uma sequência para ser processada (sequência de "a"s e "b"s) numa tabela
+            de transições de estados (no código um dicionário) onde vai avançar de estado para estado
+            começando no inicial e acabando com sucesso no final.<br> Já o Autómato com pilha funciona 
+            com uma pilha onde é depositada um "$" que vai sinalizar o final do processo em sucesso. 
+            Igualmente ao autómato finito, este autómato requisita uma sequência ao utilizador, mas
+            desta vez de 0's e 1's onde o número de 0's é igual ao de 1's e todos os 0's aparecem
+            primeiro. Ao ler a sequência por cada 0 que lê, o algoritmo vai colocar um marcador "x"
+            na pilha e por cada 1 que lê vai retirar esse marcador até não exisir mais nada na sequência
+            e restar apenas o simbolo "$".<br> O Regex (short for regular expression) é uma sequência de 
+            caracteres que vai definir um padrão, neste caso uma password e um Email. A password só vai
+            ser aceite se tiver no mínimo uma minúscula, uma maiúscula, um número e pelo menos 8 
+            caracteres e o Email terá que seguir as regras normais para criar um Email.<br> Por fim 
+            o ultimo algoritmo, a turing machine visa organizar uma sequência de 0's e 1's usando uma
+            fita abstrata, um conjunto de estados pré-programado e uma sequência dada pelo utilizador.
+            O algoritmo começa então por alocar a sequência na fita e colocando um "$"no final; depois	
+            vai encontrar todos os 0's do número, substituindo-os por "x" e recolocando-os depois do
+            "$"; a seguir fará o mesmo para os "1"s colocando-os depois de todos os "0"s seguindo de
+            limpar todos os "x"s e o "$" acabando assim com uma sequência organizada.<br><br>
+               Na última página do site encontrasse o projeto final da cadeira: Game Of Life. Este jogo
+            é um autómato celular que tem o objetivo de reproduzir através de regras simples o
+            desenvolvimento de grupos de seres vivos. A aplicação é "Turing Complete" o que significa
+            que tem a capacidade de emular uma máquina de turing, isto é que o sistema é capaz de 
+            reconhecer e decidir a manipulação de data consoante as regras que lhe são dadas.
+            Este jogo é constituído por um tabuleiro quadriculado em que as células podem estar vivas(1)
+            ou mortas(0) e seguem as seguintes regras:<br>
+                   1)Cada célula com menos de duas vivas adjacentes morre por, subpopulação<br>
+                   2)Uma célula com duas ou três vivas adjacentes continua viva <br>
+                   3)Qualquer célula com mais de 3 adjacentes vivas morre por, sobrepopulação<br>
+                   4)Uma célula morta com 3 vivas adjacentes torna se viva(reprodução)<br>
+                   <br>
+            Para a criação desta aplicação havia algumas escolhas em termos de tecnologias
+                viáveis como pygame ou bibliotecas com matplotlib mas decidimos experimentar algo
+                novo e diferente utilizando "Skulpt" que permite correr python no browser
+                como JavaScript. Para desenhar os gráficos usamos o Turtle (biblioteca gráfica de python)
+                mas devido à passagem pelo Skulpt perdeu se algum performance.<br>
+       
         </h3>
+        <li id="ab" > <a  href="index">Back</a> </li>
     </main>
 
     <footer>

@@ -1,6 +1,8 @@
 from flask import flash
 import re
 
+#########################################################################
+
 def automato(seq):
     estado_final = {"3"}
     aceitavel={"a","b"}
@@ -22,6 +24,8 @@ def automato(seq):
         return(flash("Sequencia não aceite"))
     else:
         return(flash("Sequencia aceite!"))
+
+#########################################################################
 
 def automata(sequen):
     #estado_final = {"3"}
@@ -61,6 +65,8 @@ def automata(sequen):
     if stack.pop() == '$':
         return( flash('Sequencia aceite!'))
     else: return(flash('Sequencia não aceite'))
+
+#########################################################################
 
 def password(codigo):
     

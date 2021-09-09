@@ -18,28 +18,24 @@ def regex():
             flash("Dados aceites")
         else:
             flash("Dados Incorretos")
-        return render_template("regex.html" )
-    return render_template("regex.html")
+        return render_template("algo.html" )
+    return render_template("algo.html")
 
 @app.route('/AutFinit', methods=["POST","GET"])
 def AutFinit():
     if request.method == "POST":
         seq = request.form["sequencia"]
         AutFinito.automato(seq)
-        return render_template("AutFinit.html" ) 
-    return render_template("AutFinit.html")
+        return render_template("algo.html" ) 
+    return render_template("algo.html")
 
 @app.route('/AutPilha', methods=["POST","GET"])
 def AutPilha():
     if request.method == "POST":
         sequ = request.form["sequen"]
         AutFinito.automata(sequ)
-        return render_template("AutPilha.html" ) 
-    return render_template("AutPilha.html")
-
-@app.route('/gol') 
-def gol(): 
-    return render_template("gol.html")
+        return render_template("algo.html" ) 
+    return render_template("algo.html")
 
 @app.route('/turing', methods=["POST","GET"])
 def turing():
@@ -47,8 +43,16 @@ def turing():
         se = request.form["se"]
         tape = tur.main(se)
         flash(tape)
-        return render_template("turing.html" ) 
-    return render_template("turing.html")
+        return render_template("algo.html" ) 
+    return render_template("algo.html")
+
+@app.route('/algo')
+def algo():
+    return render_template("algo.html")
+
+@app.route('/gol') 
+def gol(): 
+    return render_template("gol.html")
 
 @app.route('/about') 
 def about(): 
